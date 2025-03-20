@@ -1,0 +1,15 @@
+Here's a simple Lambda function written in Python using AWS SDK (boto3) that identifies EBS 
+snapshots not associated with any active EC2 instances and we will delete this snapshots using this scripts.
+
+AWS Console Steps:
+1. Create one EC2 instance and volume.
+2. Create one snapshot of volume.
+3. Create one Lambda function and Ensure the Lambda execution role has the necessary permissions for 
+   ec2:DescribeSnapshots, ec2:DescribeVolumes, and ec2:DeleteSnapshot.
+
+Python Scripts Steps:
+1. List all EBS snapshots.
+2. Check if each snapshot is attached to any running EC2 instance.
+3. Delete snapshots that are not attached to any active instances.
+
+This Lambda helps in deleting orphaned snapshots to save storage costs.
